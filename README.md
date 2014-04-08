@@ -25,8 +25,8 @@ Specifically:
 
 - Use `all-lower-hyphen-css-case` for multiword filenames.
 - Use `UpperCamelCase` for class names (things that you'd pass to "new") and namespaces
-- Use `CAPS_SNAKE_CASE` for constants, things that should never change and are rarely used.
 - Use `lowerCamelCase` for multiword identifiers when they refer to objects, functions, methods, members, or anything not specified in this section.
+- Use `CAPS_SNAKE_CASE` for constants, things that should never change and are rarely used.
 
 ### Files & Folders
 
@@ -50,9 +50,7 @@ Specifically:
 
 ### Code
 
-Let's start with some code that illustrates the simpliest thing that could be called a library
-
-In `inc/uber-library-example.h` (the "main definition header"), you'll see something like this (see `//` prefaced code for annotations.).
+In `inc/uber-library-example.h`, you'll see something like this:
 
     // Boilerplate, ignore or google it
     #ifndef _UBER_LIBRARY_EXAMPLE
