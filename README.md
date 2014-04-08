@@ -7,13 +7,11 @@ The canonical Spark firmware library; exemplifies meta-data, class, file naming 
 
 _What?_
 
-Blinks the D7 LED when you top the mode button.
+Blinks the D7 LED when you tap the mode button.
 
-## What is a Spark Library?
+## A Spark firmware library consists of:
 
-A Spark firmware library consists of:
-
-  - a Git REPO with a clone url
+  - a Git REPO with a public clone url
   - a JSON manifest (`spark.json`)
   - a bunch of files and directories at predictable locations (as illustrated here)
 
@@ -85,7 +83,7 @@ In `inc/uber-library-example.h` (the "main definition header"), you'll see somet
     // Tuck methods you don't want the user of your library into
     // `private` scope
     private:
-      char _serverName[SPARKTIMEHOSTNAMESIZE];
+      char _thing[UBER_LIBRARY_CONST1];
       bool _syncedOnce = false;
       bool _isSyncing = false;
     };
@@ -96,7 +94,7 @@ For the most common use case of your library, users should be able to simply do 
 
 A simple flashable application firmware might look like this:
 
-    #include "uber-library-example.h"`
+    #include "uber-library-example.h"
 
     // Allocate global vars
     UberLibraryExample uberLibraryExample;
