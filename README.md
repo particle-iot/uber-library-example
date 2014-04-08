@@ -19,17 +19,27 @@ A Spark firmware library consists of:
 
 More specifically, the collection of files comprising a Spark Library include the following:
 
+### Some opinions about naming
+
+In general, use [npm](https://www.npmjs.org/doc/misc/npm-coding-style.html) for inspiration.
+
+Specifically:
+
+- Use `all-lower-hyphen-css-case` for multiword filenames.
+- Use `UpperCamelCase` for class names (things that you'd pass to "new").
+- Use `CAPS_SNAKE_CASE` for constants, things that should never change and are rarely used.
+
 ### Files & Folders
 
 - a `spark.json` meta data file at the root of the library dir, very similar to NPM's `package.json`. (required)
 
 - a `firmware` folder containing code that will compile and execute on a Spark devce. This folder contains
   - An `inc` folder with zero or more `.h` files.
-   - If one or more is specified, one of the files MUST be named the same as the "name" key in the `spark.json` with a `.h` added. So if `name` is `uber-library-example`, then there should be a `uber-library-example.h` file in this folder.
+    - If one or more is specified, one of the files MUST be named the same as the "name" key in the `spark.json` with a `.h` added. So if `name` is `uber-library-example`, then there should be a `uber-library-example.h` file in this folder.
   - A `src` folder with one or more `.ino` or `.cpp` files.
     - The main definition file of the library, where the dominant class users will use in their code or functions are defined, MUST be named the same as the "name" key in the `spark.json`. For example `uber-library-example.cpp` would be a valid main definition file.
   - An `examples` folder containing one or more flashable example firmware `.ino` or `.cpp` applications.
-    - Each example file should be named descriptively and indicate what aspect of the library they illustrate. For example, a JSON library might have an example file like `parse-json-and-output-to-serial.cpp`.
+    - Each example file should be named descriptively and indicate what aspect of the library it illustrates. For example, a JSON library might have an example file like `parse-json-and-output-to-serial.cpp`.
   - A `test` folder containing any associated tests
     - TODO: Someone who has strong opinions about [test driven embedded development](http://pragprog.com/book/jgade/test-driven-development-for-embedded-c), should issue a pull request to spec this :).
 - a `README.md` that should include 
@@ -43,7 +53,8 @@ More specifically, the collection of files comprising a Spark Library include th
 
 Let's start with some code that illustrates the simpliest thing that could be called a library
 
-- `inc/uber-library-example.h`
+- `inc/uber-library-example.h` (the "main definition header")
+
 
     // Boilerplate, ignore or google it
     #ifndef _UBER_LIBRARY_EXAMPLE
@@ -82,30 +93,3 @@ Let's start with some code that illustrates the simpliest thing that could be ca
     #endif
 
 
-
-
-
-
-
-
-
-
-
-
-
-### uber-library-example.h   (The "main header" file)
-
-#### If it were a bundle of static functions...
-
-
-    UberLibraryExample
-
-### uber-library-example.cpp (The "main definition" file)
-
-### Naming Conventions
-
-- Use `all-lower-hyphen-css-case` for multiword filenames and config keys.
-- Use `UpperCamelCase` for class names (things that you'd pass to "new").
-- Use `CAPS_SNAKE_CASE` for constants, things that should never change and are rarely used.
-
-In general, or where not specified, use [npm](https://www.npmjs.org/doc/misc/npm-coding-style.html) for inspiration for coding style + conventions to stick with.
