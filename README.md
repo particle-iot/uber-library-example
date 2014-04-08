@@ -53,8 +53,7 @@ Specifically:
 
 Let's start with some code that illustrates the simpliest thing that could be called a library
 
-- `inc/uber-library-example.h` (the "main definition header")
-
+In `inc/uber-library-example.h` (the "main definition header"), you'll see something like this (see `//` prefaced code for annotations.).
 
     // Boilerplate, ignore or google it
     #ifndef _UBER_LIBRARY_EXAMPLE
@@ -92,4 +91,23 @@ Let's start with some code that illustrates the simpliest thing that could be ca
 
     #endif
 
+For the most common use case of your library, users should be able to simply do `#include "uber-library-example.h"` to start using your library.
+
+A simple flashable application firmware might look like this:
+
+    #include "uber-library-example.h"`
+
+    // Allocate global vars
+    UberLibraryExample uberLibraryExample;
+    unsigned long int currentTime;
+
+    def setup()
+      // Call initialization routines
+      uberLibraryExample.begin();
+    end
+
+    def loop()
+      // Use the library
+      uberLibraryExample = UberLibraryExample();
+    end
 
