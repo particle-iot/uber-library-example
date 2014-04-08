@@ -21,13 +21,14 @@ More specifically, the collection of files comprising a Spark Library include th
 
 ### Some opinions about naming
 
-In general, use [npm](https://www.npmjs.org/doc/misc/npm-coding-style.html) for inspiration.
+In general or where unspecified, use [npm](https://www.npmjs.org/doc/misc/npm-coding-style.html) for inspiration.
 
 Specifically:
 
 - Use `all-lower-hyphen-css-case` for multiword filenames.
-- Use `UpperCamelCase` for class names (things that you'd pass to "new").
+- Use `UpperCamelCase` for class names (things that you'd pass to "new") and namespaces
 - Use `CAPS_SNAKE_CASE` for constants, things that should never change and are rarely used.
+- Use `lowerCamelCase` for multiword identifiers when they refer to objects, functions, methods, members, or anything not specified in this section.
 
 ### Files & Folders
 
