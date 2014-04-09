@@ -33,10 +33,10 @@ Specifically:
 - a `spark.json` meta data file at the root of the library dir, very similar to NPM's `package.json`. (required)
 
 - a `firmware` folder containing code that will compile and execute on a Spark devce. This folder contains
-  - An `inc` folder with zero or more `.h` files.
-    - If one or more is specified, one of the files MUST be named the same as the "name" key in the `spark.json` with a `.h` added. So if `name` is `uber-library-example`, then there should be a `uber-library-example.h` file in this folder.
+  - An `inc` folder with one or more `.h` files.
+    - One of the files MUST be named the same as the "name" key in the `spark.json` with a `.h` added. So if `name` is `uber-library-example`, then there should be a `uber-library-example.h` file in this folder.
   - A `src` folder with one or more `.ino` or `.cpp` files.
-    - The main definition file of the library, where the dominant class users will use in their code or functions are defined, MUST be named the same as the "name" key in the `spark.json`. For example `uber-library-example.cpp` would be a valid main definition file.
+    - The main definition file of the library, where the dominant class users will use in their code or functions are defined, MUST be named the same as the "name" key in the `spark.json`. For example `uber-library-example.cpp` would be a valid main definition file. There can only be ONE main definition file, i.e. you CANNOT have both a `uber-library-example.cpp` AND `uber-library.example.ino`.
   - An `examples` folder containing one or more flashable example firmware `.ino` or `.cpp` applications.
     - Each example file should be named descriptively and indicate what aspect of the library it illustrates. For example, a JSON library might have an example file like `parse-json-and-output-to-serial.cpp`.
   - A `test` folder containing any associated tests
