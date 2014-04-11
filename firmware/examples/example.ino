@@ -1,0 +1,3 @@
+// ....examples should illustrate the most common or most useful use cases of the library ...
+void setup() { }
+void loop() { }
