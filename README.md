@@ -56,6 +56,7 @@ When using an acronym like `LED` or `JSON` in a class name, file name, or other 
 ### Files & Folders
 
 - a `spark.json` meta data file at the root of the library dir, very similar to NPM's `package.json`. (required)
+  - The content of this file is validated via [this JSON Schema](https://www.spark.io/spark_library_schema_v1.json).
 
 - a `firmware` folder containing code that will compile and execute on a Spark devce. This folder contains
   - An `inc` folder with one or more `.h` files.
