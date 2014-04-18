@@ -1,13 +1,30 @@
-uber-library-example
-====================
+About
+===
 
-_Why?_
+This repo serves as 1) the definitive spec for what constitutes a Spark firmware library as well as 2) an actual example library you can use as a reference when writing your own libraries, running locally, or include in the Web IDE.
 
-The canonical Spark firmware library; exemplifies meta-data, class, file naming conventions, etc.  This repo mainly exists to demonstrate how to structure a Spark library that can be reused in other projects and imported into the Web IDE...under active development...
+- This README describes the Spark Library spec.
 
-_What?_
+- The other files constitute the Spark Library itself.
 
-Blinks the D7 LED when you tap the mode button.
+This repo is meant to serve as a place to consolidate insights from conversations had about libraries on the [Spark community site](https://community.spark.io), GitHub, or elsewhere on the web. "Proposals" to change the spec are pull requests that both define the conventions in the README AND illustrate them in underlying code. If something doesn't seem right, start a community thread or issue pull requests to stir up the conversation about how it ought to be!
+
+_What does the actual library do?_
+
+Not much, :)...other than illustrate Spark library conventions in action.
+
+- Illustrates an object oriented approach to encapsulating a Pin; instantiating, initializing, setting and getting state.
+- Illustrates a functional approach to interacting with a pin.
+
+## Example Usage
+
+### Light up an LED when you tap the mode button.
+
+The object oriented approach
+
+    TODO: Illustrate code!! toggling an LED when mode button is tapped
+
+The functional approach
 
 ## A Spark firmware library consists of:
 
@@ -17,16 +34,20 @@ Blinks the D7 LED when you tap the mode button.
 
 More specifically, the collection of files comprising a Spark Library include the following:
 
-### Some opinions about naming
+### Firmware Code Conventions
 
-In general or where unspecified, use [npm](https://www.npmjs.org/doc/misc/npm-coding-style.html) for inspiration.
-
-Specifically:
+In general or where unspecified, use node.js + [npm](https://www.npmjs.org/doc/misc/npm-coding-style.html) for inspiration while respecting the pragmatic realities of embedded programming.  Specifically:
 
 - Use `all-lower-hyphen-css-case` for multiword filenames.
 - Use `UpperCamelCase` for class names (things that you'd pass to "new") and namespaces
 - Use `lowerCamelCase` for multiword identifiers when they refer to objects, functions, methods, members, or anything not specified in this section.
 - Use `CAPS_SNAKE_CASE` for constants, things that should never change and are rarely used.
+
+When using an acronym like `LED` or `JSON` in a class name, file name, or other context above, don't necessarily use all caps.  Instead, let the convention drive the spelling. For example, a class that blinks LEDs would be called `LedBlinker`, and live in a file called `led-blinker.cpp`
+
+- Use two spaces for indentation.
+- Prefix variables or functions with an underscore (`_`) when indended for very narrow, restricted, local usage.
+- Functions or methods that begin with the name `begin`, are meant to be called in the `setup()` function.
 
 ### Files & Folders
 
@@ -41,70 +62,11 @@ Specifically:
     - Each example file should be named descriptively and indicate what aspect of the library it illustrates. For example, a JSON library might have an example file like `parse-json-and-output-to-serial.cpp`.
   - A `test` folder containing any associated tests
     - TODO: Someone who has strong opinions about [test driven embedded development](http://pragprog.com/book/jgade/test-driven-development-for-embedded-c), should issue a pull request to spec this :).
-- a `README.md` that should include 
-  - some instructions on how to install and use the library
-  - a recommended bill of materials
-  - instructions on how to wire up a circuits that will work with the flashable example firmware that ship with the library
+- a good `README.md` will provide one or more of the following sections
+  - _About_: An overview of the library; purpose, and description of dominant use cases.
+  - _Example Usage_: A simple snippet of code that illustrates the coolest part about your library.
+  - _Recommended Components_: Description and links to example components that can be used with the library.
+  - _Circuit Diagram: A schematic and breadboard view of how to wire up components with the library.
+  - _Learning Activities_: Proposed challenges to do more sophisticated things or hacks with the library.
 
-- a `doc` directory of Fritzing diagrams or other supporting documentation linked to from the `README.md`
-
-### Code
-
-In `inc/uber-library-example.h`, you'll see something like this:
-
-    // Boilerplate, ignore or google it
-    #ifndef _UBER_LIBRARY_EXAMPLE
-    #define _UBER_LIBRARY_EXAMPLE
-
-    // Constants
-    #define UBER_LIBRARY_CONST1 42
-
-    // Includes
-    #include "uber-helper-thing.h"
-
-    /*
-    * Highlevel Documentation
-    */
-
-    class UberLibraryExample {
-    public:
-      // Constructor
-      UberLibraryExample();
-
-      // `setup()` methods, that users should call in their `setup()` function
-      void begin();
-
-      // Methods for manipulating instances of the class
-      bool getPacketReceivedCount();
-      void resetPacketReceivedCount();
-
-    // Tuck methods you don't want the user of your library into
-    // `private` scope
-    private:
-      char _thing[UBER_LIBRARY_CONST1];
-      bool _syncedOnce = false;
-      bool _isSyncing = false;
-    };
-
-    #endif
-
-For the most common use case of your library, users should be able to simply do `#include "uber-library-example.h"` to start using your library.
-
-A simple flashable application firmware might look like this:
-
-    #include "uber-library-example.h"
-
-    // Allocate global vars
-    UberLibraryExample uberLibraryExample;
-    unsigned long int currentTime;
-
-    def setup()
-      // Call initialization routines
-      uberLibraryExample.begin();
-    end
-
-    def loop()
-      // Use the library
-      uberLibraryExample = UberLibraryExample();
-    end
-
+- a `doc` directory of diagrams or other supporting documentation linked to from the `README.md`
