@@ -20,11 +20,9 @@ Not much, :)...other than illustrate Spark library conventions in action.
 
 ### Light up an LED when you tap the mode button.
 
-The object oriented approach
+The object oriented approach: See firmware/examples/set-d7-pin-high-when-mode-button-pressed.cpp
 
-    TODO: Illustrate code!! toggling an LED when mode button is tapped
-
-The functional approach
+The functional approach: TODO
 
 ## A Spark firmware library consists of:
 
