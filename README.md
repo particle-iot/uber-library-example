@@ -46,6 +46,12 @@ When using an acronym like `LED` or `JSON` in a class name, file name, or other 
 - Use two spaces for indentation.
 - Prefix variables or functions with an underscore (`_`) when indended for very narrow, restricted, local usage.
 - Functions or methods that begin with the name `begin`, are meant to be called in the `setup()` function.
+- Curly Brackets should go on the next line after a class or function definition like this:
+
+    void my_killer_function()
+    {
+
+    }
 
 ### Files & Folders
 
