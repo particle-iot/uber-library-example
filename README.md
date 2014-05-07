@@ -1,28 +1,18 @@
 About
 ===
 
-This repo serves as 1) the definitive spec for what constitutes a Spark firmware library as well as 2) an actual example library you can use as a reference when writing your own libraries, running locally, or include in the Web IDE.
+This repo serves as
 
-- This README describes the Spark Library spec.
+1. the specfication for what constitutes a valid Spark firmware library
 
-- The other files constitute the Spark Library itself.
+2. an actual example library you can use as a reference when writing your own libraries, running locally, or include in the Web IDE.
 
-This repo is meant to serve as a place to consolidate insights from conversations had about libraries on the [Spark community site](https://community.spark.io), GitHub, or elsewhere on the web. "Proposals" to change the spec are pull requests that both define the conventions in the README AND illustrate them in underlying code. If something doesn't seem right, start a community thread or issue pull requests to stir up the conversation about how it ought to be!
+This README describes the Spark Library spec. The other files constitute the Spark Library itself;
 
-_What does the actual library do?_
-
-Not much, :)...other than illustrate Spark library conventions in action.
-
-- Illustrates an object oriented approach to encapsulating a Pin; instantiating, initializing, setting and getting state.
-- Illustrates a functional approach to interacting with a pin.
-
-## Example Usage
-
-### Light up an LED when you tap the mode button.
-
-The object oriented approach: See firmware/examples/set-d7-pin-high-when-mode-button-pressed.cpp
-
-The functional approach: TODO
+  - file, class, and function [naming conventions](doc/firmware-code-conventions.md)
+  - [example apps](firmware/examples) that illustrate library in action
+  - recommended approaches for [test-driven embedded development](firmware/test/RUNNING_TESTS.md)
+  - [metadata](spark.json) to set authors, license, official names
 
 ## A Spark firmware library consists of:
 
@@ -31,27 +21,6 @@ The functional approach: TODO
   - a bunch of files and directories at predictable locations (as illustrated here)
 
 More specifically, the collection of files comprising a Spark Library include the following:
-
-### Firmware Code Conventions
-
-In general or where unspecified, use node.js + [npm](https://www.npmjs.org/doc/misc/npm-coding-style.html) for inspiration while respecting the pragmatic realities of embedded programming.  Specifically:
-
-- Use `all-lower-hyphen-css-case` for multiword filenames.
-- Use `UpperCamelCase` for class names (things that you'd pass to "new") and namespaces
-- Use `lowerCamelCase` for multiword identifiers when they refer to objects, functions, methods, members, or anything not specified in this section.
-- Use `CAPS_SNAKE_CASE` for constants, things that should never change and are rarely used.
-
-When using an acronym like `LED` or `JSON` in a class name, file name, or other context above, don't necessarily use all caps.  Instead, let the convention drive the spelling. For example, a class that blinks LEDs would be called `LedBlinker`, and live in a file called `led-blinker.cpp`
-
-- Use two spaces for indentation.
-- Prefix variables or functions with an underscore (`_`) when indended for very narrow, restricted, local usage.
-- Functions or methods that begin with the name `begin`, are meant to be called in the `setup()` function.
-- Curly Brackets should go on the next line after a class or function definition like this:
-
-    void my_killer_function()
-    {
-
-    }
 
 ### Files & Folders
 
@@ -75,3 +44,10 @@ When using an acronym like `LED` or `JSON` in a class name, file name, or other 
   - _Learning Activities_: Proposed challenges to do more sophisticated things or hacks with the library.
 
 - a `doc` directory of diagrams or other supporting documentation linked to from the `README.md`
+
+
+### Contributing
+
+This repo is meant to serve as a place to consolidate insights from conversations had about libraries on the [Spark community site](https://community.spark.io), GitHub, or elsewhere on the web. "Proposals" to change the spec are pull requests that both define the conventions in the README AND illustrate them in underlying code. If something doesn't seem right, start a community thread or issue pull requests to stir up the conversation about how it ought to be!
+
+
