@@ -39,18 +39,19 @@ More specifically, the collection of files comprising a Spark Library include th
 
 ### Firmware
 
-1. a `firmware` folder containing code that will compile and execute on a Spark devce. This folder contains:
-  1. A bunch of `.h` and `.cpp` files constituting the header and source code of the library.
-    1. _The main library header file_, intended to be included by users 
-      1. MUST be named the same as the "name" key in the `spark.json` + a `.h` extension. So if `name` is `uber-library-example`, then there should be a `uber-library-example.h` file in this folder. Other `.h` files, can exist, but this is the only one that is required.
-      2. SHOULD define a C++ style namespace in upper camel case style from the name (i.e. uber-library-example -> UberLibraryExample)
-    2. _The main definition file_, providing the bulk of the libraries public facing functionality
-      1. MUST be named like the header file, but with a `.cpp` extension. (uber-library-example.cpp)
-    3. Other optional `.h` files, when included in a user's app, will be available for inclusion in the Web IDE via `#include "uber-library-example/SOME_FILE_NAME.h"`.
-    4. Other optional `.cpp` files will be compiled by the Web IDE when the library is included in an app.
-  2. An `examples` sub-folder containing one or more flashable example firmware `.ino` or `.cpp` applications.
-    - Each example file should be named descriptively and indicate what aspect of the library it illustrates. For example, a JSON library might have an example file like `parse-json-and-output-to-serial.cpp`.
-  3. A `test` sub-folder containing any associated tests
+- 1. a `firmware` folder containing code that will compile and execute on a Spark devce. This folder contains:
+  - 1. A bunch of `.h` and `.cpp` files constituting the header and source code of the library.
+    - 1. _The main library header file_, intended to be included by users 
+      - 1. MUST be named the same as the "name" key in the `spark.json` + a `.h` extension. So if `name` is `uber-library-example`, then there should be a `uber-library-example.h` file in this folder. Other `.h` files, can exist, but this is the only one that is required.
+      - 2. SHOULD define a C++ style namespace in upper camel case style from the name (i.e. uber-library-example -> UberLibraryExample)
+    - 2. _The main definition file_, providing the bulk of the libraries public facing functionality
+      - 1. MUST be named like the header file, but with a `.cpp` extension. (uber-library-example.cpp)
+      - 2. SHOULD encapsulate all code inside a C++ style namespace in uper camel case style (i.e. UberLibraryExample)
+    - 3. Other optional `.h` files, when included in a user's app, will be available for inclusion in the Web IDE via `#include "uber-library-example/SOME_FILE_NAME.h"`.
+    - 4. Other optional `.cpp` files will be compiled by the Web IDE when the library is included in an app.
+  - 2. An `examples` sub-folder containing one or more flashable example firmware `.ino` or `.cpp` applications.
+    - 1. Each example file should be named descriptively and indicate what aspect of the library it illustrates. For example, a JSON library might have an example file like `parse-json-and-output-to-serial.cpp`.
+  - 3. A `test` sub-folder containing any associated tests
 
 ### Contributing
 
