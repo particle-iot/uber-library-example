@@ -61,7 +61,9 @@ create_spark_library this-is-my-library-name
 
 - Use this repo as your guide to good library conventions.
 
-### 4. Validate and publish via the Spark IDE
+### 4. Create a GitHub repo and push to it
+
+### 5. Validate and publish via the Spark IDE
 
 To validate, import, and publish the library, jump into the IDE and click the "Add Library" button.
 
