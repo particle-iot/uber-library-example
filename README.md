@@ -7,17 +7,64 @@ This repo serves as
 
 2. an actual example library you can use as a reference when writing your own libraries.
 
-This README describes the Spark Library spec. The other files constitute the Spark Library itself;
+Spark Libraries can be used in the [Spark IDE](https://www.spark.io/build), and _soon_
+with the [Spark CLI](https://github.com/spark/spark-cli) and when compiling firmware locally with [Spark core-firmware](https://github.com/spark/core-firmware).
+
+## Getting Started
+
+1. Copy and paste this into a bash or zsh shell or .rc file.
+
+    # Copied from https://github.com/spark/uber-library-example
+    create_spark_library() {
+      LIB_NAME=$1
+      echo "creating $LIB_NAME"
+      mkdir $LIB_NAME
+      cd $LIB_NAME
+      mkdir firmware
+      cat <<EOS > spark.json
+      {
+        "name":"${LIB_NAME}",
+        "version":"0.0.1",
+        "author":"Someone <email@somesite.com>"
+      }
+    EOS
+      echo '//line 1' > firmware/${LIB_NAME}.h
+      echo '//line 1' > firmware/${LIB_NAME}.cpp
+      echo 'TODO' > README.md
+      mkdir firmware/examples
+      cat <<EOS > firmware/examples/an-example.cpp
+      void setup {}
+      void loop {}
+    EOS
+      git init
+      echo "Way to go, $LIB_NAME created! Tweak the codez, push to GitHub, and enter repo path into IDE to continue the fun!"
+    }
+
+2. Call the bash function like this:
+
+    create_spark_library this-is-my-library-name
+
+3. Edit the spark.json and add firmware code. Use this repo as your guide to good library conventions.
+
+4. To validate, import, and publish the library, jump into the IDE and click the "Add Library" button.
+
+## Table of Contents
+
+This README describes the Spark Library Spec.
+
+The other files constitute the Spark Library itself:
 
   - file, class, and function [naming conventions](doc/firmware-code-conventions.md)
   - [example apps](firmware/examples) that illustrate library in action
   - recommended approaches for [test-driven embedded development](firmware/test/RUNNING_TESTS.md)
   - [metadata](spark.json) to set authors, license, official names
 
-## A Spark firmware library consists of
+## The Spark Library Spec
 
-  - a Git REPO with a public clone url
-  - a JSON manifest (`spark.json`)
+A Spark firmware library consists of:
+
+  - a GitHub REPO with a public clone url
+  - a JSON manifest (`spark.json`) at the root of the repo
   - a bunch of files and directories at predictable locations (as illustrated here)
 
 More specifically, the collection of files comprising a Spark Library include the following:
@@ -35,7 +82,6 @@ More specifically, the collection of files comprising a Spark Library include th
   - _Learning Activities_: Proposed challenges to do more sophisticated things or hacks with the library.
 
 3. a `doc` directory of diagrams or other supporting documentation linked to from the `README.md`
-
 
 ### Firmware
 
