@@ -39,8 +39,11 @@ EOS
   void loop {}
 EOS
   git init
-  echo "Way to go, $LIB_NAME created! Tweak the codez, push to GitHub, and enter repo path into IDE to continue the fun!"
+  echo "$LIB_NAME created."
+  echo "Tweak the codez, push to GitHub, validate, and publish in the Spark IDE."
+  echo "Check out https://github.com/spark/uber-library-example for more details"
 }
+
 ```
 
 ### 2. Call the function
