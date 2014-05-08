@@ -12,7 +12,9 @@ with the [Spark CLI](https://github.com/spark/spark-cli) and when compiling firm
 
 ## Getting Started
 
-1. Copy and paste this into a bash or zsh shell or .rc file.
+### 1. Define a function to create library boilerplate
+
+Copy and paste this into a bash or zsh shell or .profile file.
 
 ```bash
 create_spark_library() {
@@ -41,15 +43,26 @@ EOS
 }
 ```
 
-2. Call the bash function like this:
+### 2. Call the function
 
 ```bash
 create_spark_library this-is-my-library-name
 ```
 
-3. Edit the spark.json and add firmware code. Use this repo as your guide to good library conventions.
+- Replace `this-is-my-library-name` with the actual lib name.
 
-4. To validate, import, and publish the library, jump into the IDE and click the "Add Library" button.
+### 3. Edit the spark.json firmware .h and .cpp files
+
+- Use this repo as your guide to good library conventions.
+
+### 4. Validate and publish via the Spark IDE
+
+To validate, import, and publish the library, jump into the IDE and click the "Add Library" button.
+
+## Getting Support
+
+- Check out the [libraries category on the Spark community site](https://community.spark.io/category/libraries) and post a thread there!
+- To file a bug; create a GitHub issue on this repo. Be sure to include details about how to replicate it.
 
 ## Table of Contents
 
@@ -102,7 +115,7 @@ More specifically, the collection of files comprising a Spark Library include th
     1. Each example file should be named descriptively and indicate what aspect of the library it illustrates. For example, a JSON library might have an example file like `parse-json-and-output-to-serial.cpp`.
   3. A `test` sub-folder containing any associated tests
 
-### Contributing
+## Contributing
 
 This repo is meant to serve as a place to consolidate insights from conversations had about libraries on the [Spark community site](https://community.spark.io), GitHub, or elsewhere on the web. "Proposals" to change the spec are pull requests that both define the conventions in the README AND illustrate them in underlying code. If something doesn't seem right, start a community thread or issue pull requests to stir up the conversation about how it ought to be!
 
