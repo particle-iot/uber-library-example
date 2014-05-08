@@ -1,11 +1,18 @@
-// NOTE: This is janky, work in progressss.
+// NOTE: This is janky; someone with a solid idea of how this should work should rock it!
 //
+//
+// gnu c string lib
 #include <iostream>
+
+
+// Stubs from Spark land
 #define HIGH 0x1
 #define LOW 0x0
 #define D7 7
 #define OUTPUT 1
 #define INPUT 0
+
+// TODO This should instead include the library here instead of copy and pasting it
 namespace UberLibraryExample
 {
   class Pin
@@ -53,28 +60,31 @@ namespace UberLibraryExample
   };
 }
 
+
+// TODO: This main file should run tests and spit out strings in the tap format
+// http://en.wikipedia.org/wiki/Test_Anything_Protocol
+//
+// A better approach would be to define functions for each test and then call them inside main
 int main(){
   UberLibraryExample::Pin pin(D7);
-  std::cout << "STARTING STATE"<< std::endl;
-  std::cout << "pin.number=" << pin.getNumber() << std::endl;
-  std::cout << "pin.state=" << pin.getState() << std::endl;
-  std::cout << "pin.mode=" << pin.getMode() << std::endl;
+  std::cout << "# STARTING STATE"<< std::endl;
+  std::cout << "# pin.number=" << pin.getNumber() << std::endl;
+  std::cout << "# pin.state=" << pin.getState() << std::endl;
+  std::cout << "# pin.mode=" << pin.getMode() << std::endl;
   if (pin.isHigh()) {
-    std::cout << "led is high" << std::endl;
+    std::cout << "ok: led is high" << std::endl;
   } else {
-    std::cout << "led is low" << std::endl;
+    std::cout << "ok: led is low" << std::endl;
   }
 
-  std::cout << "AFTER CHANGING STATE"<< std::endl;
+  std::cout << "# AFTER CHANGING STATE"<< std::endl;
   pin.setHigh();
-  std::cout << "pin.state=" << pin.getState() << std::endl;
+  std::cout << "# pin.state=" << pin.getState() << std::endl;
   if (pin.isHigh()) {
-    std::cout << "led is high" << std::endl;
+    std::cout << "ok: led is high" << std::endl;
   } else {
-    std::cout << "led is low" << std::endl;
+    std::cout << "ok: led is low" << std::endl;
   }
 
   return 0;
 }
-
-
