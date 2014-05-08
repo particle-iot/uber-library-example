@@ -14,35 +14,38 @@ with the [Spark CLI](https://github.com/spark/spark-cli) and when compiling firm
 
 1. Copy and paste this into a bash or zsh shell or .rc file.
 
-    # Copied from https://github.com/spark/uber-library-example
-    create_spark_library() {
-      LIB_NAME=$1
-      echo "creating $LIB_NAME"
-      mkdir $LIB_NAME
-      cd $LIB_NAME
-      mkdir firmware
-      cat <<EOS > spark.json
-      {
-        "name":"${LIB_NAME}",
-        "version":"0.0.1",
-        "author":"Someone <email@somesite.com>"
-      }
-    EOS
-      echo '//line 1' > firmware/${LIB_NAME}.h
-      echo '//line 1' > firmware/${LIB_NAME}.cpp
-      echo 'TODO' > README.md
-      mkdir firmware/examples
-      cat <<EOS > firmware/examples/an-example.cpp
-      void setup {}
-      void loop {}
-    EOS
-      git init
-      echo "Way to go, $LIB_NAME created! Tweak the codez, push to GitHub, and enter repo path into IDE to continue the fun!"
-    }
+```bash
+create_spark_library() {
+  LIB_NAME=$1
+  echo "creating $LIB_NAME"
+  mkdir $LIB_NAME
+  cd $LIB_NAME
+  mkdir firmware
+  cat <<EOS > spark.json
+  {
+    "name":"${LIB_NAME}",
+    "version":"0.0.1",
+    "author":"Someone <email@somesite.com>"
+  }
+EOS
+  echo '//line 1' > firmware/${LIB_NAME}.h
+  echo '//line 1' > firmware/${LIB_NAME}.cpp
+  echo 'TODO' > README.md
+  mkdir firmware/examples
+  cat <<EOS > firmware/examples/an-example.cpp
+  void setup {}
+  void loop {}
+EOS
+  git init
+  echo "Way to go, $LIB_NAME created! Tweak the codez, push to GitHub, and enter repo path into IDE to continue the fun!"
+}
+```
 
 2. Call the bash function like this:
 
-    create_spark_library this-is-my-library-name
+```bash
+create_spark_library this-is-my-library-name
+```
 
 3. Edit the spark.json and add firmware code. Use this repo as your guide to good library conventions.
 
