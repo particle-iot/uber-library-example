@@ -32,14 +32,17 @@ create_spark_library() {
 EOS
   echo '//line 1' > firmware/${LIB_NAME}.h
   echo '//line 1' > firmware/${LIB_NAME}.cpp
-  echo 'TODO' > README.md
+  cat <<EOS > README.md
+TODO: Describe your library and how to run the examples
+EOS
+
   mkdir firmware/examples
   cat <<EOS > firmware/examples/an-example.cpp
-  void setup {}
-  void loop {}
+// TODO write code that illustrates the best parts of what your library can do
+void setup {}
+void loop {}
 EOS
   git init
-  echo "$LIB_NAME created."
   echo "Tweak the codez, push to GitHub, validate, and publish in the Spark IDE."
   echo "Check out https://github.com/spark/uber-library-example for more details"
 }
@@ -52,7 +55,7 @@ EOS
 create_spark_library this-is-my-library-name
 ```
 
-- Replace `this-is-my-library-name` with the actual lib name.
+- Replace `this-is-my-library-name` with the actual lib name. Your library's name should be lower-case, dash-separated.
 
 ### 3. Edit the spark.json firmware .h and .cpp files
 
