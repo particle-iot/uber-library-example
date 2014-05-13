@@ -1,15 +1,22 @@
 About
 ===
 
-This repo serves as
+This repo serves as the specfication for what constitutes a valid Spark firmware library and an actual example library you can use as a reference when writing your own libraries.
 
-1. the specfication for what constitutes a valid Spark firmware library
+Spark Libraries can be used in the [Spark IDE](https://www.spark.io/build).
+_Soon_ you'll also be able to use them with the [Spark CLI](https://github.com/spark/spark-cli) and when compiling firmware locally with [Spark core-firmware](https://github.com/spark/core-firmware).
 
-2. an actual example library you can use as a reference when writing your own libraries.
+## Table of Contents
 
-Spark Libraries can be used in the [Spark IDE](https://www.spark.io/build), and _soon_
-with the [Spark CLI](https://github.com/spark/spark-cli) and when compiling firmware locally with [Spark core-firmware](https://github.com/spark/core-firmware).
+This README describes how to create libraries as well as the Spark Library Spec.
 
+The other files constitute the Spark Library itself:
+
+  - file, class, and function [naming conventions](doc/firmware-code-conventions.md)
+  - [example apps](firmware/examples) that illustrate library in action
+  - recommended approaches for [test-driven embedded development](firmware/test/RUNNING_TESTS.md)
+  - [metadata](spark.json) to set authors, license, official names
+  
 ## Getting Started
 
 ### 1. Define a function to create library boilerplate
@@ -71,17 +78,6 @@ To validate, import, and publish the library, jump into the IDE and click the "A
 
 - Check out the [libraries category on the Spark community site](https://community.spark.io/category/libraries) and post a thread there!
 - To file a bug; create a GitHub issue on this repo. Be sure to include details about how to replicate it.
-
-## Table of Contents
-
-This README describes the Spark Library Spec.
-
-The other files constitute the Spark Library itself:
-
-  - file, class, and function [naming conventions](doc/firmware-code-conventions.md)
-  - [example apps](firmware/examples) that illustrate library in action
-  - recommended approaches for [test-driven embedded development](firmware/test/RUNNING_TESTS.md)
-  - [metadata](spark.json) to set authors, license, official names
 
 ## The Spark Library Spec
 
