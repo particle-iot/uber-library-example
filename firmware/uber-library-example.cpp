@@ -1,4 +1,4 @@
-#include "uber-library-example/uber-library-example.h"
+#include "uber-library-example.h"
 
 // Constructor
 UberLibraryExample::Pin::Pin(int _number)
