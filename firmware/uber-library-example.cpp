@@ -12,7 +12,7 @@ void UberLibraryExample::Pin::beginInPinMode(PinMode _pinMode)
 {
   pinMode(number, _pinMode); 
 }
-      
+
 // Main API functions that the library provides
 // typically called in `loop()` or `setup()` functions
 void UberLibraryExample::Pin::modulateAtFrequency(int _ms)

@@ -1,8 +1,9 @@
 #ifndef _UBER_LIBRARY_EXAMPLE
 #define _UBER_LIBRARY_EXAMPLE
 
-// NOTE/TODO: We don't want to do this; would be nice if it were conditional
+#if SPARK_WIRING_H
 #include "application.h"
+#endif
 
 namespace UberLibraryExample
 {

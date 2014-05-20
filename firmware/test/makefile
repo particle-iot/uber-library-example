@@ -1,8 +1,10 @@
-# TODO: `make` should run the tests as described in RUNNING_TESTS
+# TODO: Figure out how to stub out the fact that
+# a libraries main .cpp file does `#include "uber-library-example/uber-library-example.h"`
+#
 CPP = g++
 RM = rm -f
 MKDIR = mkdir -p
-INCLUDE_DIRS +=
+INCLUDE_DIRS += ..
 all:
-	g++ test1.cpp # build it
-	./a.out       # run it
+	$(CPP) -I $(INCLUDE_DIRS) test1.cpp
+	./a.out
