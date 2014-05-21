@@ -1,7 +1,11 @@
 #ifndef _UBER_LIBRARY_EXAMPLE
 #define _UBER_LIBRARY_EXAMPLE
 
-#if SPARK_WIRING_H
+// Make library cross-compatiable
+// with Arduino, GNU C++ for tests, and Spark.
+#if defined(ARDUINO) && ARDUINO >= 100
+#include "Arduino.h"
+#elif defined(SPARK)
 #include "application.h"
 #endif
 
