@@ -1,3 +1,4 @@
+// NOTE/NUANCE: When including WITHIN a library, no sub-dir prefix is needed.
 #include "uber-library-example.h"
 
 // Constructor
