@@ -10,22 +10,18 @@ The user of a library to be able to do:
 
     git clone the-library.git
     cd the-library/firmware/test
-    make
-    
-And see a bunch of TAP test output like this:
+    make test
 
-    1..3
-    ok 1 - it can have a pin set high
-    # some comments about what is happening
-    ....
-    ok 2 - it can have a pin set low
-    not ok 3 - it can modulate pin frequencyat 10ms 
+And see a bunch of test output like this:
+
+    running unit tests ......
+    test/test1.cpp:343: error: Failure in UberLibraryExample.blabla: false
 
 - Unit tests should run on a regular computer, not a Spark Core.
 - A developer should be able to cd into `firmware/test` and type `make` to run the unit tests (as illustrated above)
 - The tests should stub out Spark specific functionality so the code compiles and runs using on a
   standard GNU C++ compiler.
-- When the compiled binary is run, it should print test output using the [Test Anything Protocol](http://en.wikipedia.org/wiki/Test_Anything_Protocol). i.e. "ok" for test pass and "not ok" for test failure.
+- When the compiled binary is run, it should print out a "." for each successful test. Failing tests should have a descriptive name and point to the file and line number of the test.
 - When any test fails, the binary should return a non-zero exit code.
 
 How to help out
