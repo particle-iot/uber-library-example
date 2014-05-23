@@ -3,12 +3,14 @@
 
 // Make library cross-compatiable
 // with Arduino, GNU C++ for tests, and Spark.
-#if defined(ARDUINO) && ARDUINO >= 100
-#include "Arduino.h"
-#elif defined(SPARK)
-#include "application.h"
-#endif
+//#if defined(ARDUINO) && ARDUINO >= 100
+//#include "Arduino.h"
+//#elif defined(SPARK)
+//#include "application.h"
+//#endif
 
+// TEMPORARY UNTIL the stuff that supports the code above is deployed to the build IDE
+#include "application.h"
 namespace UberLibraryExample
 {
   class Pin
