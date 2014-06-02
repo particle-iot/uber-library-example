@@ -128,6 +128,7 @@ EOS
 
 	echo "Creation of ${LIB_NAME} complete!"
 	echo "Check out https://github.com/spark/uber-library-example for more details"
+}
 ```
 
 ### 2. Call the function
