@@ -2,6 +2,6 @@
   "name": "uber-library-example",
   "author": "Joe Goggins <joe@spark.io>",
   "license": "MIT",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "A simple library that illustrates coding conventions of a Spark Library"
 }
