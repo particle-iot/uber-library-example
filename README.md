@@ -180,7 +180,7 @@ More specifically, the collection of files comprising a Spark Library include th
 
 ### Firmware
 
-1. a `firmware` folder containing code that will compile and execute on a Spark devce. This folder contains:
+1. a `firmware` folder containing code that will compile and execute on a Spark device. This folder contains:
   1. A bunch of `.h`, `.cpp`, and `.c` files constituting the header and source code of the library.
     1. _The main library header file_, intended to be included by users 
       1. MUST be named the same as the "name" key in the `spark.json` + a `.h` extension. So if `name` is `uber-library-example`, then there should be a `uber-library-example.h` file in this folder. Other `.h` files, can exist, but this is the only one that is required.
