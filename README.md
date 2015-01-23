@@ -28,7 +28,7 @@ create_spark_library() {
 	LIB_NAME=$1
 
 	# Make sure a library name was passed
-	if [ -z "${LIB_NAME}" ]; then
+	if [ -z "{$LIB_NAME}" ]; then
 		echo "Please provide a library name"
 		return
 	fi
@@ -129,6 +129,9 @@ EOS
 	echo "Creation of ${LIB_NAME} complete!"
 	echo "Check out https://github.com/spark/uber-library-example for more details"
 }
+
+create_spark_library
+
 ```
 
 ### 2. Call the function
