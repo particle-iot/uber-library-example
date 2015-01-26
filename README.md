@@ -19,13 +19,11 @@ The other files constitute the Spark Library itself:
   
 ## Getting Started
 
-### 1. Define a function to create library boilerplate
+### 1. Define a temporary function to create library boilerplate
 
 Copy and paste this into a bash or zsh shell or .profile file.
 
 ```bash
-#File: create_spark_library
-
 create_spark_library() {
 	LIB_NAME="$1"
 
@@ -132,7 +130,6 @@ EOS
 	echo "Check out https://github.com/spark/uber-library-example for more details"
 }
 
-create_spark_library $1
 ```
 
 ### 2. Call the function
