@@ -1,0 +1,15 @@
+{
+  "name": "uber-library-example",
+  "author": "Joe Goggins <joe@particle.io>",
+  "license": "MIT",
+  "version": "0.0.10",
+  "description": "A simple library that illustrates coding conventions of a Particle Library",
+  "maintainer": "Wojtek Siudzinski <wojtek@particle.io>",
+  "category": "Other",
+  "url": "https://github.com/spark/uber-library-example",
+  "architectures": [
+    "avr",
+    "particle-core",
+    "particle-photon"
+  ]
+}
