@@ -11,5 +11,9 @@
     "avr",
     "particle-core",
     "particle-photon"
-  ]
+  ],
+  "dependencies": {
+    "neopixel": "^1.2.3",
+    "internet-button": "*"
+  }
 }
