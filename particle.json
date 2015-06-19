@@ -7,6 +7,7 @@
   "maintainer": "Wojtek Siudzinski <wojtek@particle.io>",
   "category": "Other",
   "url": "https://github.com/spark/uber-library-example",
+  "repository": "spark/uber-library-example",
   "architectures": [
     "avr",
     "particle-core",
