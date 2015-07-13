@@ -1,6 +1,5 @@
-// IMPORTANT: When including a library in a firmware app, a sub dir prefix is needed
-// before the particular .h file.
-#include "uber-library-example/uber-library-example.h"
+// IMPORTANT: When including a library in a firmware app, brackets are needed.
+#include <uber-library-example.h>
 
 // Initialize objects from the lib; be sure not to call anything
 // that requires hardware be initialized here, put those in setup()

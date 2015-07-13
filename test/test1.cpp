@@ -1,9 +1,9 @@
 // GNU c string lib
 #include <iostream>
 
-// Stubs from Spark land
+// Stubs from Particle land
 #define D7 7
-typedef enum PinMode 
+typedef enum PinMode
 {
   OUTPUT,
   INPUT,
@@ -14,7 +14,7 @@ typedef enum PinMode
   AN_INPUT  			//Used internally for ADC Input
 } PinMode;
 
-#include "uber-library-example.h"
+#include <uber-library-example.h>
 
 int main()
 {

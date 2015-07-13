@@ -1,5 +1,6 @@
-// NOTE/NUANCE: When including WITHIN a library, no sub-dir prefix is needed.
+// NOTE/NUANCE: When including WITHIN a library, use quotes instead of brackets.
 #include "uber-library-example.h"
+#include "uber-library-example/utilities.h"
 
 // Constructor
 UberLibraryExample::Pin::Pin(int _number)
@@ -11,7 +12,7 @@ UberLibraryExample::Pin::Pin(int _number)
 // Initializers that should be called in the `setup()` function
 void UberLibraryExample::Pin::beginInPinMode(PinMode _pinMode)
 {
-  pinMode(number, _pinMode); 
+  pinMode(number, _pinMode);
 }
 
 // Main API functions that the library provides
