@@ -17,7 +17,6 @@ namespace UberLibraryExample
   {
     private:
       int number;
-      int mode;
       bool state;
     public:
       Pin(int _number);
