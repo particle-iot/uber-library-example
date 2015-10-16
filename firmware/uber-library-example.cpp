@@ -35,11 +35,11 @@ bool UberLibraryExample::Pin::getState()
 }
 bool UberLibraryExample::Pin::getMode()
 {
-  return digitalRead(number);
+  return getPinMode(number) == OUTPUT ? true: false;
 }
 bool UberLibraryExample::Pin::isHigh()
 {
-  return state = HIGH ? true : false;
+  return state == HIGH ? true : false;
 }
 
 // Setters
