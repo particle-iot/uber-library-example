@@ -35,7 +35,7 @@ bool UberLibraryExample::Pin::getState()
 }
 bool UberLibraryExample::Pin::getMode()
 {
-  return mode;
+  return getPinMode(number) == OUTPUT ? true: false;
 }
 bool UberLibraryExample::Pin::isHigh()
 {
