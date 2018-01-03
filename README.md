@@ -4,7 +4,7 @@ About
 This repo serves as the specification for what constitutes a valid Spark firmware library and an actual example library you can use as a reference when writing your own libraries.
 
 Particle Libraries can be used in the [Particle IDE](https://build.particle.io/build).
-_Soon_ you'll also be able to use them with the [Particle CLI](https://github.com/spark/particle-cli) and when compiling firmware locally with [Particle firmware](https://github.com/spark/firmware).
+_Soon_ you'll also be able to use them with the [Particle CLI](https://github.com/particle-iot/particle-cli) and when compiling firmware locally with [Particle firmware](https://github.com/particle-iot/firmware).
 
 ## Table of Contents
 
